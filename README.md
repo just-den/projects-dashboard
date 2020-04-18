@@ -6,9 +6,7 @@ Freelance projects dashboard
 <img src="https://demo.webexp.site/freelance-dashboard/external/screenshot.png">
 <br>
 
-## Demo
-
-<a href="https://demo.webexp.site/freelance-dashboard" target="_blank">Demo</a>
+## <a href="https://demo.webexp.site/freelance-dashboard" target="_blank">Demo</a>
 
 
 ## IE Support
