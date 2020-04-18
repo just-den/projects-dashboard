@@ -1,4 +1,4 @@
-## data-table-light.js
+## dashboard
 
 Freelance projects dashboard
 
