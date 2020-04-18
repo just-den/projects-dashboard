@@ -1,0 +1,354 @@
+main{
+
+
+   .cats_tags_block{
+
+		.category_label{
+
+			margin: 10px;
+			padding: 10px 40px;
+			border-radius: 3px;
+			background: $gray__1;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			position: relative;
+
+			div{
+				&:not(:first-of-type){
+					color: white;
+					font-size: .8em;
+					padding: 0px 5px 0px 0;
+				}
+
+				margin: 3px;
+				padding: 2px 5px 2px 0;
+				border-radius: 2px;
+				@include flex-center;
+
+				span{
+					&.del{
+						padding: 2px 5px;
+						transition: all .3s;
+						cursor: pointer;
+
+						&:hover{
+							background-color: $gray__1;
+						}
+					}
+
+					&.name{
+						&:before{
+							content: '#';
+						}
+					}
+				}
+			}
+
+			.add_tag_block{
+
+				@include flex-center;
+				height: 25px;
+
+				&_in{
+
+					input[type=text]{
+						margin-left: 10px;
+						border: none;
+						outline: none;
+						padding: 5px 10px;
+						width: 150px;
+						border-radius: 3px;
+						font-size: .8em;
+					}
+	
+					input[type=color]{
+						height: 25px;
+						width: 25px;
+						margin-left: 10px;
+						border: none;
+						outline: none;
+						box-shadow: 0 2px 5px $gray__2;
+						border-radius: 3px;
+					}
+				}
+	
+				.add_tag{
+					box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+					height: 20px;
+					width: 20px;
+					border-radius: 3px;
+					@include flex-center;
+					margin-left: 10px;
+					cursor: pointer;
+	
+					svg{
+						fill: none;
+						stroke: $gray__3;
+						width: 60%;
+						height: 60%;
+					}
+				}
+
+			}
+
+
+			a{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);				
+				box-shadow: 0 2px 5px $gray__2;
+				height: 20px;
+				width: 20px;
+				border-radius: 3px;
+				@include flex-center;
+
+				&:first-of-type{
+					left: 10px;
+				}
+
+				&:last-of-type{
+					right: 10px;
+				}
+
+				svg{
+					fill: none;
+					stroke: $gray__3;
+					width: 60%;
+					height: 60%;
+				}
+
+			}
+
+		}
+
+   }
+
+   section.settings{
+
+   		min-height: 300px;
+		width: 100%;
+		margin: 50px auto;
+
+		h4{
+			text-transform: uppercase;
+    		padding-bottom: 10px;
+		}
+
+		form{
+
+			margin: 30px auto;
+
+			h5{
+				margin: 10px 0 5px 0;
+				text-transform: capitalize;
+			}
+					
+			.fieldset{
+				display: flex;
+				flex-direction: column;
+				background: $gray__1;
+				padding: 10px;
+				border-radius: 5px;
+				margin: 10px 0;
+
+				.fftgb{
+					width: 100%;
+					@include flex-center;
+					padding: 5px;
+					margin: 2px 0;
+
+					@include placeholder;
+					
+					input[type=text]{
+						width: 100%;
+						height: 40px;
+						outline: none;
+						border: 1px solid $gray__1;
+						padding-left: 15px;
+					}
+
+					input[type=color]{
+						width: 40px;
+						height: 40px;
+						outline: none;
+						border: none;	
+						box-shadow: 0 2px 5px $gray__2;
+   						margin-left: 10px;					
+					}
+
+					a{
+						width: 40px;
+						height: 40px;
+						@include flex-center;
+						font-size: 1.5em;
+					}
+
+					button{
+						font-size: 1em;
+						border: none;
+						outline: none;
+						box-shadow: 0 2px 5px $gray__2;
+						color: $gray__3;
+						background-color: transparent;
+						cursor: pointer;
+						padding: 0px 10px 2px 10px;
+						font-variant: small-caps;
+						border-radius: 3px;
+
+						span{
+							margin: 0 10px 0 0;
+						}
+					}
+				}
+
+			}
+
+			.buttons{
+
+				@include flex-center;
+
+				button{
+					font-size: 1.7em;
+					border: none;
+					outline: none;
+					box-shadow: 0 2px 5px $gray__2;
+					cursor: pointer;
+					padding: 0px 10px 2px 10px;
+					font-variant: small-caps;
+					margin: 10px;	
+					border-radius: 3px;		
+					@include flex-center;
+	
+					svg{
+						fill: none;
+						stroke: white;
+						width: 15px;
+						margin: 0 5px 0 0;					
+					}
+
+					&.add,
+					&.edit{
+						color: white;
+						background-color: $main__color;
+					}
+
+					&.remove{
+						color: $gray__3;
+						background-color: $gray__1;
+					}
+
+				}
+			}
+
+
+		}
+
+		// VALIDATION
+		.validation_false{
+			border: 1px solid $danger__color!important;
+		}
+
+
+		.add_term{
+
+			width: 250px;
+			margin: 10px 0;
+			@include flex-between;
+			position: relative;
+
+			input[type=text]{
+				height: 40px;
+				width: 100%;
+				outline: none;
+				border: 1px solid $gray__1;
+				padding-left: 15px;
+				padding-right: 50px;
+				border-radius: 3px;
+			}
+
+			a{
+				height: 30px;
+				width: 30px;
+				border-radius: 3px;
+				box-shadow: 0 1px 3px $gray__2;
+				background-color: $main__color;
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				transform: translateY(-50%);
+				@include flex-center;
+
+				svg{
+					width: 80%;
+					height: 80%;
+				}
+			}
+		}
+
+
+		.terms_list{
+			width: 250px;
+			background: $gray__1;
+			padding: 10px;
+			border-radius: 5px;
+
+			ul{
+				cursor: move;
+
+				li{
+					padding: 10px 10px;
+					@include flex-between;
+					
+					&:not(:last-of-type){
+						border-bottom: 1px solid $gray__1;
+					}
+
+					input{
+						width: 70%;
+						border: 1px solid $gray__2;
+						outline: none;
+						border-radius: 3px;
+						padding-left: 10px;
+					}
+
+					nav{
+						display: flex;
+						a{
+							width: 30px;
+							height: 30px;
+							@include flex-center;
+							box-shadow: 0 1px 3px $gray__2;
+							margin: 0 5px;
+							border-radius: 3px;
+
+							svg{
+								width: 70%;
+								height: 70%;
+								opacity: .15;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+
+	@include lg__tablets{
+
+		section.settings{
+			.add_term{
+				width: 300px;
+			}	
+			.terms_list{
+				width: 300px;
+			}		
+		}
+
+	}
+
+
+}
+

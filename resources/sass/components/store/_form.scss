@@ -1,0 +1,148 @@
+section.search,
+section.form{
+	width: 100%;
+    padding: 20px;
+
+    form{
+	    margin: 0 auto;
+		padding: 0 20px;
+
+	    .form_block{
+			width: 100%;
+			margin: 10px auto;
+			display: flex;
+			position: relative;
+
+			input,textarea,select{
+				border: 1px solid $gray__1;
+			    padding: 10px;
+			    border-radius: 3px;
+			    width: 100%;
+			    outline: none;
+			    margin: 0 2px;
+
+			}
+
+		    input.search{
+				padding-left: 50px;
+				outline: none;
+				border: none;
+				border-bottom: 1px solid $gray__1;
+				height: 60px;
+				font-size: 1.3em;
+			}
+
+			a.search{
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+				padding: 5px 10px;
+				background: $main__color;
+				color: white;
+				box-shadow: 0 2px 5px $gray__2;
+				border-radius: 2px;
+				text-transform: uppercase;
+				font-size: .8em;
+				@include flex-between;
+
+				svg.spin{
+					width: 15px;
+					height: 15px;
+					margin-right: 5px;	
+					fill: none;
+					stroke: white;				
+				}
+			}
+
+			svg.search{
+				width: 20px;
+				height: 20px;
+				fill: $gray__2;
+			    transform: translateY(-50%);
+			    position: absolute;
+			    top: 50%;
+				left: 10px;
+				stroke: $gray__2;
+			}
+
+			
+
+			@include placeholder;
+		}
+
+		button{
+			background-color: $main__color;
+			border: none;
+		    outline: none;
+		    text-transform: uppercase;
+		    color: white;
+		    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+		    padding: 10px 20px;
+		    cursor: pointer;
+		    border-radius: 3px;
+		}
+	}
+}
+
+
+section.search{
+
+    form{
+
+	    .form_block{
+
+	    	.search_title{
+				padding: 1px 10px 2px 10px;
+			    margin: 0 10px;
+	    	}
+			
+			label{
+			    display: flex;
+			    padding: 1px 10px 2px 10px;
+			    position: relative;
+			    border-radius: 2px;
+			    cursor: pointer;
+			    transition: all .3s;
+				background: rgba(0,0,0,.05);
+				margin: 0 2px;
+				font-size: .9em;
+
+			    span{
+			    	transition: all .3s;
+					&:first-of-type{
+						margin-right: 10px;
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
+
+			    input[type="checkbox"]{
+					position: absolute;
+					opacity: 0;
+					visibility: hidden;
+				}
+
+				&.active{
+					background: $beige__1;
+			    	color: $danger__color;
+
+
+				    span{
+						&:first-of-type{
+							margin-right: 10px;
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+
+				}
+			}	
+
+
+
+
+		}
+
+	}
+}

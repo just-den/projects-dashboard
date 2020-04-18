@@ -1,0 +1,109 @@
+@mixin google-font($font){
+    $font: unquote($font);
+    @import url(https://fonts.googleapis.com/css?family=#{$font})
+}
+
+@mixin ul-clean {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+@mixin a-clean {
+
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:focus,
+    &:active{
+
+      text-decoration: none;
+      color: inherit;
+
+    }
+
+}
+
+
+@mixin translate-center{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@mixin placeholder{
+    ::placeholder { 
+      color: $gray__2;
+    }
+
+    :-ms-input-placeholder { 
+      color: $gray__2;
+    }
+
+    ::-ms-input-placeholder { 
+      color: $gray__2;
+    }
+}
+
+
+// https://developer.mozilla.org/ru/docs/Web/CSS/Media_Queries/Using_media_queries
+// https://getbootstrap.com/docs/4.4/layout/overview/
+
+// MAIN
+@mixin sm__tablets  { 
+  @media (min-width: 576px) { @content; } 
+}
+@mixin lg__tablets  { 
+  @media (min-width: 768px) { @content; } 
+}
+@mixin sm__desktop  { 
+  @media (min-width: 992px) { @content; } 
+}
+@mixin desktop  { 
+  @media (min-width: 1200px) { @content; } 
+}
+@mixin lg_desktop  { 
+  @media (min-width: 1425px) { @content; } 
+}
+
+// ADDITIONAL
+@mixin phones__landscape {
+  @media (max-width: 575px) and (orientation: landscape) { @content; }
+}
+@mixin sm__tablets__landscape {
+  @media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) { @content; }
+}
+@mixin lg__tablets__landscape {
+  @media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) { @content; }
+}

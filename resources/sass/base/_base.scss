@@ -1,0 +1,104 @@
+body{
+	color: $text__color;
+	font-family: $montserrat;
+	position: relative;
+	min-height: 100vh;
+	width: 100vw;
+	overflow-x: hidden;
+
+	main{
+
+	    position: absolute;
+	    top: 0;
+	    left: 50%;
+	    width: 58%;
+	    transform: translateX(-50%);   
+	    box-sizing: border-box;
+		transition: all .3s;
+		max-width: 1200px;
+		margin-bottom: 100px;
+		margin-top: 40px;
+
+	   .title{
+			padding: 30px 20px;
+			box-sizing: border-box;
+			display: flex;			
+			justify-content: center;
+			align-items: center;
+			color: $main__color;
+			border-bottom: 1px solid $gray__1;
+	    	filter: drop-shadow(0px 2px 2px $gray__2);
+
+			  h4{
+				    font-family: $poiret;
+				    font-size: 1.2em;
+				    text-transform: uppercase;		    
+					margin: 0;					
+				}
+
+			svg{
+				fill: $main__color;
+				width: 15px;
+				stroke: $main__color; 
+				margin: 0 0 0 20px ;
+			}
+	 
+	   }
+	   
+
+
+	}
+
+	@include lg__tablets{
+
+		main{
+			margin-top: 0px;
+
+			.title{
+				justify-content: space-between;
+	
+				h4{
+					font-size: 1.8em;
+				}
+	
+				svg{
+					width: 30px;					
+				}
+			}
+		}
+
+	}
+
+}
+
+ul{
+	@include ul-clean;
+}
+
+a{
+	@include a-clean;
+}
+
+// https://qna.habr.com/q/351056
+// ::-webkit-scrollbar { 
+// 	width: 10px; 
+// 	height: 3px; 
+// }
+// ::-webkit-scrollbar-track-piece { 
+// 	background-color:  white;
+// }
+// ::-webkit-scrollbar-thumb { 
+// 	height: 20px; 
+// 	background-color: white; 
+// 	border-radius: 3px; 
+// 	border:1px solid $gray__1;
+// }
+
+.opacity{
+	opacity: .4;
+}
+
+.disabled{
+	pointer-events: none;
+	opacity: .4;
+}

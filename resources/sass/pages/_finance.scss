@@ -1,0 +1,636 @@
+main{
+
+    .total{
+        width: 100%;
+        padding: 30px 10px;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+            width: 25px;
+            height: 25px;
+            fill: $yellow__3;
+        }
+
+        .ycb{
+            height: 80px;
+            width: 120px;
+            font-size: 1.3em;
+            font-family: $titan;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-left: 20px;
+
+            .usd{
+                color: $main__color
+            }
+
+            .eur{
+                color: $danger__color
+            }
+        }
+
+    }
+
+    .data{
+        width: 100%;
+        height: 500px;
+        @include flex-center;
+        padding: 10px 10px 60px 10px;
+        flex-direction: column;
+
+
+        .tabs{
+            height: 20%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            margin-right: 0px;
+            
+
+            button{
+                border: none;
+                outline: none;
+                background: white;
+                min-width: 80px;
+                padding: 10px;
+                margin-bottom: 10px;
+                // cursor: pointer;
+                color: $gray__3;
+                @include flex-center;
+
+                svg{
+                    width: 15px;
+                    height: 15px;
+                    display: none;
+                    fill: $beige__1;
+                }
+
+                span{
+                    margin-left: 15px;
+                }
+
+                &.active{
+                    // background: $gray__1;
+                    box-shadow: 0 1px 3px $gray__1;
+                    border-radius: 2px;
+                    
+                    svg{
+                        display: block;
+                    }
+                }
+            }
+        }
+
+
+        .chart{
+            height: 100%;
+            width: 100%;
+            padding: 0 20px;
+
+            .legend{
+                text-transform: uppercase;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                height: 50px;
+
+                label{
+                    margin-right: 20px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    input[type=checkbox]{
+                        position: absolute;
+                        left: 0;
+                        z-index: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    span{
+                        &:first-of-type{
+                            @include flex-center;
+                            width: 20px;
+                            height: 20px;
+                            z-index: 1;
+                            margin: 0 5px 0 0;
+                            border-radius: 50%;
+
+                            .mark{
+                                width: 40%;
+                                height: 40%;
+                                background-color: white;
+                                border-radius: 50%;
+                                visibility: hidden;
+                                opacity: 0;
+                                transition: all .3s;
+                            }
+                        }
+                    }
+
+                    &.eur{
+                        span{
+                            &:first-of-type{
+                                background: lighten($danger__color,10%);
+                            }
+                        }
+                    }
+
+                    &.usd{
+                        span{
+                            &:first-of-type{
+                                background: lighten($main__color,10%);
+                            }
+                        }
+                    }
+
+                    &.active{
+                        span{
+                            &:first-of-type{
+                                .mark{
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .body{
+                width: 100%;
+                height: 100%;
+                @include flex-between;
+                margin: 10px 0;
+                padding: 20px 0;
+
+                .month{
+                    flex-basis: 7%;
+                    height: 100%;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    max-width: 40px;
+                        
+                    .label{
+                        position: absolute;
+                        left: 50%;
+                        bottom: -40px;
+                        color: $gray__3;
+                        transform: translateX(-50%) rotate(-90deg);
+                        font-size: .7em;
+                    }                  
+
+                     .lines{
+
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+
+                        .eur{
+                            .line{
+                                background: lighten($danger__color,10%);
+                            } 
+                        }
+
+                        .usd{
+                            .line{
+                                background: lighten($main__color,10%);
+                            } 
+                        }
+
+                        .eur, .usd{
+                            display: flex;
+                            align-items: flex-end;
+                            flex-basis: 50%;
+                            position: relative;
+       
+                            .line{
+                                width: 100%;
+                                // height: 100%;
+                            }
+        
+                            .mark{
+                                font-size: 10px;
+                                bottom: 100%;
+                                left: 50%;
+                                transform: translateX(-50%) rotate(-90deg);
+                                position: absolute;
+                                background: transparent;
+                                font-weight: 600;
+                                color: $gray__3;
+                                font-size: .5em;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }   
+
+
+    .payments{
+        margin-top: 50px;
+        padding: 10px;
+
+        h4{
+            text-transform: uppercase;
+        }
+
+        .inb{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: 20px 0px;
+            flex-direction: column;
+
+            .inb1{
+                position: relative;
+                width: 300px;
+
+                input[type=text]{
+                    border: 1px solid $gray__1;
+                    padding: 10px 10px 10px 50px;
+                    border-radius: 3px;
+                    width: 100%;
+                    outline: none;
+                    margin: 0 10px 0 0;
+                    max-width: 300px;
+                }
+    
+                a{
+                    @include flex-center;
+                    box-shadow: 0 1px 3px $gray__2;
+                    border-radius: 2px;           
+                    
+                    &.add, &.edit{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 260px;
+                        background: $main__color;
+    
+                        svg{
+        
+                            path,rect{
+                                fill: none;
+                                stroke: white;
+                            }
+                        }
+    
+                    }
+    
+                    svg{
+                        width: 70%;
+                        height: 70%;
+                    }
+    
+                }
+            }
+
+            .currency{
+                width: 40px;
+                height: 40px;
+                @include flex-center;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 5px;
+                position: absolute;
+
+                select {
+                    /* for Firefox */
+                    -moz-appearance: none;
+                    /* for Chrome */
+                    -webkit-appearance: none;
+                    appearance: none
+                  }
+                  
+                  /* For IE10 */
+                  select::-ms-expand {
+                    display: none;
+                  }
+
+                select{
+                    border: 1px solid $gray__1;
+                    padding: 0 0 0 10px;
+                    border-radius: 3px;
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    height: 100%;
+                    cursor: pointer;
+                }
+
+            }
+
+            
+            .calendar{
+
+                @include flex-center;
+                margin: 10px 0 0 0;
+
+                .flatpickr{
+                    position: relative;
+
+                    input[type=text]{
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        z-index: 0;
+                        opacity: 0;                        
+                    }
+
+                    a{
+                        @include flex-center;
+                        box-shadow: 0 1px 3px $gray__2;
+                        border-radius: 2px; 
+                        width: 30px;
+                        height: 30px;                                   
+
+                        svg{
+                            opacity: 0.15;
+                            width: 90%;
+                            height: 90%;
+                        }
+
+                    }
+
+                }
+
+
+                span{
+                    margin-left: 10px;
+                    font-size: .9em;
+                    color: rgba(0,0,0,.5);
+                }
+
+            }
+
+        }
+
+        .slb{
+
+            margin: 20px 0px;
+
+            .slct{
+
+                div{
+                    padding: 10px 0;
+                    font-size: 18px;
+                }
+
+                select{
+                    border: 1px solid $gray__1;
+                    padding: 10px;
+                    border-radius: 3px;
+                    width: 100%;
+                    outline: none;
+                    margin: 0 10px 0 0;
+                    max-width: 300px;
+                }
+
+            }
+            .payment_notes{
+                width: 100%;
+                margin: 40px 0;
+
+                ul{
+                    width: 100%;
+
+                    li{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        height: 50px;
+                        padding: 0 5px;
+
+                        .spbl{
+                            color: $gray__3;
+                            span{
+                                &:first-of-type{
+                                    font-size: .8em;
+                                    font-weight: 600;
+                                    margin: 0 10px 0 0;
+                                }
+                            }
+
+                            select{
+                                border: 1px solid $gray__1;
+                                outline: none;
+                                border-radius: 2px;                              
+                            }
+
+                            input[type=text]{
+                                border: 1px solid $gray__1;
+                                outline: none;
+                                border-radius: 2px;
+                                padding-left: 10px;
+                            }
+                        }
+
+                        .pdbl{
+
+                            @include flex-center;
+
+                            .payment_date{
+                                font-size: .8em;
+                                color: $gray__2;
+                                margin: 0 20px;
+                            }
+    
+                            nav{
+    
+                                @include flex-center;
+
+                                svg{
+                                    opacity: 0.15;
+                                    width: 70%;
+                                    height: 70%;
+                                }
+                                
+
+                                .flatpickr-edit{
+                                    width: 30px;
+                                    height: 30px;
+                                    position: relative;
+                                    
+                                    input[type=text]{
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        top: 0;
+                                        left: 0;
+                                        z-index: 0;
+                                        opacity: 0;
+                                    }
+
+                                    a{
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        z-index: 1;
+                                        top: 0;
+                                        left: 0;
+ 
+                                    }
+
+                                }
+
+    
+                                a{
+                                    @include flex-center;
+                                    width: 25px;
+                                    height: 25px;
+                                    // box-shadow: 0 1px 3px $gray__2;
+                                    margin: 0 2px;
+                                    border-radius: 2px;
+
+                                }
+
+                                .edit{
+                                    box-shadow: 0 1px 3px $gray__2;
+                                    margin: 0 0 0 20px;
+                                    background: $main__color;
+
+                                    svg{
+                                        opacity: 1!important;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+}
+
+@include lg__tablets{
+    main{
+        .total{
+            justify-content: flex-end;
+        }
+
+        .data{
+
+            flex-direction: row;
+            height: 400px;
+
+            .tabs{
+                margin-right: 40px;
+                flex-direction: column;
+                height: 100%;
+                min-width: 90px;
+
+            }
+
+            
+            .chart{
+
+                width: 80%;
+
+                .body{
+
+                    .legend{
+                        display: flex;
+                        justify-content: flex-start;
+                        height: auto;
+                    }
+
+                    .month{
+                        .lines{
+                            .eur, 
+                            .usd{
+                                .mark{
+                                    transform: translateX(-50%);
+                                }
+                            }
+                        }
+        
+                        .label{
+                            transform: translateX(-50%) rotate(-45deg);
+                            font-size: .9em;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .payments{
+
+            .inb{
+                flex-direction: row;
+                align-items: center;
+                margin: 30px 20px;
+
+                .calendar{
+                    margin: 0 0 0 10px;
+                }
+            }
+
+            .slb{               
+                margin: 30px 20px;
+                
+                .slct{
+
+                    div{
+                        padding: 10px 0;
+                        font-size: 18px;
+                    }
+
+                    select{
+                        border: 1px solid $gray__1;
+                        padding: 10px;
+                        border-radius: 3px;
+                        width: 100%;
+                        outline: none;
+                        margin: 0 10px 0 0;
+                        max-width: 300px;
+                    }
+
+                }
+                
+                .payment_notes{
+
+                        ul{
+
+                            li{
+                                padding: 0 40px;
+                            }
+
+                        }
+
+                    }
+
+            }
+
+        }
+
+
+
+    }
+}
+

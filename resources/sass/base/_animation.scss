@@ -1,0 +1,172 @@
+.animation-rotation {
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: scale(1) rotate(0);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+} 
+
+.animation-bounce-in-down{
+	animation: bounceInDown 0.7s ease-in-out both;
+	animation-fill-mode: forwards;
+} 
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+  }
+  70% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} 
+
+
+.animation-down{
+  animation: animationDown 0.3s ease-in-out both;
+  animation-fill-mode: forwards;
+} 
+
+@keyframes animationDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+} 
+
+.animation-up{
+  animation: animationUp 0.3s ease-in-out both;
+  animation-fill-mode: forwards;
+} 
+
+@keyframes animationUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} 
+
+// вариант анимации списков 1
+.animation-list-enter-active,
+.animation-list-leave-active,
+.animation-list-move {
+  transition: 300ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+  transition-property: opacity, transform;
+}
+
+.animation-list-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.animation-list-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation-list-leave {
+  position: absolute;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animation-list-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+  transform-origin: center top;
+}
+
+// вариант анимации списков 2
+.animation-2-list-enter-active,
+.animation-2-list-leave-active,
+.animation-2-list-move {
+  transition: 400ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+  transition-property: opacity, transform;
+}
+
+.animation-2-list-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animation-2-list-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation-2-list-leave {
+  position: absolute;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animation-2-list-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+  transform-origin: center top;
+}
+
+
+// модальное окно
+.animation-modal-enter-active,
+.animation-modal-leave-active,
+.animation-modal-move {
+  transition: 400ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+  transition-property: opacity, transform;
+}
+
+.animation-modal-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.animation-modal-enter-to {
+  opacity: 1;
+  transform: translateY(10%);
+}
+
+.animation-modal-leave {
+  position: absolute;
+  transform: translateY(10%);
+  opacity: 1;
+}
+
+.animation-modal-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+  transform-origin: center top;
+}
+
+
+
+// АНИМАЦИЯ РОУТИНГА
+.v-enter-active, .v-leave-active {
+  transition: opacity .5s;
+}
+.v-enter, .v-leave-active {
+  opacity: 0
+}
+
+

@@ -1,0 +1,37 @@
+// == THEME ==
+// Alowed Values: Default, Dark, Light
+$theme: Default;
+
+
+// === COLORS ===
+$text__color: #444444;
+$main__color: #00897b;
+$success__color: #4db6ac;
+$danger__color: #ff8a65;
+$gray__1: rgba(0,0,0,.05);
+$gray__2: rgba(0,0,0,.2);
+$gray__3: rgba(0,0,0,.7);
+$yellow__1: #FFFFF0;
+$yellow__2: #F6E05E;
+$yellow__3: #ceba46;
+$beige__1: #FFF7D0;
+
+@if $theme == Dark {
+    $text__color: #fff;
+} @else if $theme == Light{
+    $text__color: #000;
+}
+
+
+
+
+// shadow
+
+
+// fonts
+$poiret: 'Poiret One', cursive;
+$jura: 'Jura', sans-serif;
+$titan: 'Titan One', cursive;
+$montserrat: 'Montserrat', sans-serif;
+// ??? Anonimous Pro
+// ??? Neucha
