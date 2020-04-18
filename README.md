@@ -5,7 +5,7 @@ Freelance projects dashboard
 
 ## Demo
 
-<a href="https://demo.webexp.site/freelance-dashboard" target="_blank">
+<a href="https://demo.webexp.site/freelance-dashboard" target="_blank">Demo</a>
 
 
 ## IE Support
