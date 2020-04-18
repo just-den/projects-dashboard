@@ -2,6 +2,9 @@
 
 Freelance projects dashboard
 
+<br>
+<img src="https://demo.webexp.site/freelance-dashboard/external/screenshot.png">
+<br>
 
 ## Demo
 
