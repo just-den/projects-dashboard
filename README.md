@@ -2,9 +2,9 @@
 
 Freelance projects dashboard
 
-<br>
+<br><br>
 <a href="https://demo.webexp.site/freelance-dashboard" target="_blank"><img src="https://demo.webexp.site/freelance-dashboard/external/screenshot.png"></a>
-<br>
+<br><br>
 
 1. composer install
 2. npm install
